@@ -4,19 +4,13 @@
     --color-white: hsl(252, 30%, 100%);
     --color-light: hsl(252, 30%, 95%);
     --color-gray: hsl(252, 15%, 65%);
-    /* --color-primary: hsl(252, 75%, 17%);
-    --color-secondary: hsl(252, 100%, 60%); */
-    --color-primary: hsl(252, 100%, 60%);
-    --a: hsl(252, 75%, 60%);
-    --a: hsl(52, 75%, 60%);
-    --a: hsl(155, 75%, 60%);
-    --a: hsl(201, 75%, 60%);
-    --a: hsl(352, 75%, 60%);
+    --color-primary: hsl(252, 68%, 64%);
 
     --color-success: hsl(120, 95%, 65%);
     --color-danger: hsl(0, 95%, 65%);
     --color-dark: hsl(252, 30%, 17%);
     --color-black: hsl(252, 30%, 10%);
+    --color-sark: white;
 
     --border-radius: 2rem;
     --card-border-radius:1rem;
@@ -27,7 +21,6 @@
     --sticky-top-left: 5.4rem;
     --sticky-top-right: -18rem;
 }
-
 *,
 *::before, 
 *::after {
