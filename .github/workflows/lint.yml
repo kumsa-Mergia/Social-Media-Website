@@ -1,5 +1,5 @@
 jobs:
-  lint:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
