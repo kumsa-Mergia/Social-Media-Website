@@ -1,0 +1,38 @@
+name: Lint Code
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main  # Change this if needed
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Change version if needed
+
+      # Install dependencies
+      - name: Install linters
+        run: |
+          npm install -g htmlhint stylelint eslint
+
+      # Lint HTML files
+      - name: Lint HTML
+        run: htmlhint "**/*.html"
+
+      # Lint CSS files
+      - name: Lint CSS
+        run: stylelint "**/*.css"
+
+      # Lint JavaScript files
+      - name: Lint JavaScript
+        run: eslint "**/*.js" --max-warnings=0
