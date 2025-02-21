@@ -1,29 +1,25 @@
+name: Super-Linter
+
+on: 
+  push
+
+permissions:
+  contents: read
+  statuses: write
+
 jobs:
-  build-and-push:
+  super-lint:
+    name: Lint Code Base
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Show directory structure (debug)
-        run: ls -la
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install linters
-        run: |
-          npm install -g htmlhint stylelint eslint
-          npm list -g --depth=0  # Check if installed
-
-      - name: Lint HTML
-        run: htmlhint "**/*.html" || true  # Prevent exit
-
-      - name: Lint CSS
-        run: stylelint "**/*.css" || true
-
-      - name: Lint JavaScript
-        run: eslint "**/*.js" --max-warnings=0 || true
+      - name: Run Super-Linter
+        uses: github/super-linter@v5
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
