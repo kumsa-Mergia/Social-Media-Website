@@ -21,3 +21,11 @@ A simple, responsive frontend-only social media website built using HTML, CSS, a
    ```bash
    git clone https://github.com/kumsa-Mergia/Social-Media-Website.git
    cd Social-Media-Website
+   ```
+2. **Navigate to the project folder:**
+
+```bash
+cd Social-Media-Website
+```
+3. **Open the project in your browser:**
+You can simply double-click the index.html file, or open it in your preferred code editor and live server extension (if available).
